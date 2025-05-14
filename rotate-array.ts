@@ -19,6 +19,8 @@ function rotate(nums: number[], k: number): void {
   // for building the new one, otherwise some elements will be overwritten
   let copy = [...nums];
   for (let i = 0; i < nums.length; i++) {
+    // get the element that needs to be rotated in this position
+    // using the formula (i+k) % nums.length
     nums[(i + k) % nums.length] = copy[i];
   }
 }

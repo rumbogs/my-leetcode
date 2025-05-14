@@ -19,12 +19,18 @@ function maxProfit(prices: number[]): number {
   let minPrice = Infinity;
   let profit = 0;
 
+  // Iterate through each price
   for (let price of prices) {
+    // Check the current profit by comparing it to the last minimum price available
     const currentProfit = price - minPrice;
+    // If we get a profit
     if (currentProfit > 0) {
+      // Add it to the last profit
       profit += currentProfit;
+      // Change the minimum price to this one since it's less than the old one
       minPrice = price;
     } else {
+      // No profit, still change it to the one which is less
       minPrice = Math.min(price, minPrice);
     }
   }

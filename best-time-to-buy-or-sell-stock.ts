@@ -18,11 +18,16 @@ function maxProfit(prices: number[]): number {
   let profit = 0;
   let buy = prices[0];
 
+  // Iterate through each
   for (let i = 0; i < prices.length; i++) {
+    // If the old price is smaller than this one continue to next price
     if (buy < prices[i]) {
       continue;
     }
+    // Check the rest of the array
     for (let j = i + 1; j < prices.length; j++) {
+      // If this one is larger than the buy price, store the profit and the price
+      // and continue to check the next one until we get the largest profit
       const candidate = prices[j] - prices[i];
       if (profit < candidate) {
         profit = candidate;
@@ -37,15 +42,20 @@ function maxProfit(prices: number[]): number {
 // The key here is to also move the buy pointer whenever we encounter a smaller buy value
 function maxProfit(prices: number[]): number {
   let profit = 0;
+  // Keep track of the buy and sell value indexes
   let buy = 0;
   let sell = 1;
 
+  // Don't overflow
   while (sell < prices.length) {
+    //if the buy price is smaller than the sell
     if (prices[buy] < prices[sell]) {
+      // Check profit and store it if it's better than the last one
       const p = prices[sell] - prices[buy];
       if (p > profit) {
         profit = p;
       }
+      // Otherwise the next buy index will be the sell one (since its price is larger than the sell value)
     } else {
       buy = sell;
     }
@@ -61,8 +71,11 @@ function maxProfit(prices: number[]): number {
   let minPrice = Number.MAX_VALUE;
   let maxProfit = 0;
 
+  // Check each price of the list
   for (const currentPrice of prices) {
+    // store the lowest price
     minPrice = Math.min(currentPrice, minPrice);
+    // store the max profit
     maxProfit = Math.max(maxProfit, currentPrice - minPrice);
   }
 

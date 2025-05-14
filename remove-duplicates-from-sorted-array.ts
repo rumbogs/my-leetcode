@@ -18,7 +18,10 @@ function removeDuplicates(nums: number[]): number {
   let w = 1;
 
   for (let i = 1; i < nums.length; i++) {
+    // if the current element is not the same as the previous one
     if (nums[i] !== nums[w - 1]) {
+      // we store it at the current write position and increment the available write position
+      // for the next element
       nums[w] = nums[i];
       w++;
     }

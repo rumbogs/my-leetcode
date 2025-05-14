@@ -18,18 +18,22 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 function removeElement(nums: number[], val: number): number {
   let l = nums.length;
   let i = 0;
+
+  // if the current element is a number (not
   while (typeof nums[i] === "number") {
+    // if the element should be removed
     if (nums[i] === val) {
+      // move the element to the end of the array
       const tmp = nums[nums.length - 1];
       nums[nums.length - 1] = nums[i];
       nums[i] = tmp;
+      // and remove it
       nums.pop();
     } else {
+      // otherwise increment the pointer
       i++;
     }
   }
-  console.log("nums1", nums);
-  console.log("k", l - i);
 
   return l - i;
 }

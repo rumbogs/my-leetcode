@@ -35,11 +35,15 @@ function canJump(nums: number[]): boolean {
 
 // My solution 2 (Two-pointers) - beats 100%
 function canJump(nums: number[]): boolean {
+  // Go backwards and store the last valid index (we're able to jump to it)
   let lastValid = nums.length - 1;
   let current = nums.length - 2;
 
+  // Don't overflow
   while (current >= 0) {
+    // If the current + jumps gets over an index that's valid
     if (current + nums[current] >= lastValid) {
+      // Consider this one valid as well
       lastValid = current;
     }
     current--;

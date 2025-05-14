@@ -20,13 +20,21 @@ function merge(nums1: number[], m: number, nums2: number[], n: number): void {
   let w = m;
   // This solution is only O(m+n) since it runs through the m+n array only once
   for (let i = 0; i < m + n; i++) {
+    // if current index larger than first arrays length
     if (i >= w) {
+      // just store the remaining values from the second array
       nums1[i] = nums2[j];
+      // and increment the pointer
       j++;
     }
+    // if current value is larger than the value from the second array
     if (nums1[i] > nums2[j]) {
+      // we move the current value from the first array to the end of it
       nums1[w] = nums1[i];
+      // and we store the lowest number from the second array at the current position
       nums1[i] = nums2[j];
+      // and we increment the pointer for the second array and for the available
+      // positions from the end of the first array
       j++;
       w++;
     }

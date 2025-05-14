@@ -18,10 +18,13 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 function removeDuplicates(nums: number[]): number {
   let w = 2;
 
+  // iterate through the array starting with the 3rd element since the first 2 can be duplicates
   for (let i = 2; i < nums.length; i++) {
     // Checking the value of w-2 is sufficient, w-1 doesn't matter
     if (nums[i] !== nums[w - 2]) {
+      // if the current value is not the third copy we store it at the current position
       nums[w] = nums[i];
+      // and increase the current available position
       w++;
     }
   }

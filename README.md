@@ -9,3 +9,6 @@
 - [Best time to buy and sell stock](./best-time-to-buy-and-sell-stock.ts)
 - [Best time to buy and sell stock2](./best-time-to-buy-and-sell-stock-2.ts)
 - [Jump Game](./jump-game.ts)
+- [Jump Game 2](./jump-game-2.ts)
+- [H-index](./h-index.ts)
+- [Valid palindrome](./valid-palindrome.ts)
