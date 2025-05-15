@@ -12,3 +12,4 @@
 - [Jump Game 2](./jump-game-2.ts)
 - [H-index](./h-index.ts)
 - [Valid palindrome](./valid-palindrome.ts)
+- [Minimum Size Subarray Sum](./minimum-size-subarray-sum.ts)
